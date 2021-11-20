@@ -1,0 +1,21 @@
+.contacts {
+    list-style-type: none;
+}
+
+.listItem {
+    align-items: baseline;
+    display: flex;
+    width: 300px;
+}
+
+.button {
+    margin-left: 5px;
+    cursor: pointer;
+    height: 20px;
+}
+
+.button:hover {
+    background-color: rgb(245, 107, 107);
+    border: 2px solid black;
+    color: blanchedalmond;
+}
