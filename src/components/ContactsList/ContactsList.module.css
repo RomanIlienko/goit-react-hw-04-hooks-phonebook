@@ -1,5 +1,15 @@
 .contacts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     list-style-type: none;
+    color: blanchedalmond;
+}
+
+.contact {
+    margin-right: auto;
+    
 }
 
 .listItem {
@@ -9,13 +19,18 @@
 }
 
 .button {
-    margin-left: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
     cursor: pointer;
     height: 20px;
+    border-radius: 5px;
+    transition-duration: 1s,
+    1s;
 }
 
 .button:hover {
     background-color: rgb(245, 107, 107);
-    border: 2px solid black;
-    color: blanchedalmond;
+    border: 2px solid rgba(255, 0, 0, 0.904);
+    transform: scale(1.1);
+    
 }

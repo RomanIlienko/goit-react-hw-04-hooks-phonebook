@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 
 const Filter = ({ value, onChange }) => (
   <div className={s.filterTitle}>
-    <h2>Contacts</h2>
+    <h2 className={s.Contacts}>Contacts</h2>
     <label className={s.labelStyle}>
       Find contacts by name
-      <input type="text" value={value} onChange={onChange} />
+      <input type="text" value={value} onChange={onChange} className={s.Input}/>
     </label>
   </div>
 );

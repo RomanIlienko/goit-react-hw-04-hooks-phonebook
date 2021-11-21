@@ -1,4 +1,27 @@
 .labelStyle {
     font-weight: 400;
     font-size: 18px;
+    color: blanchedalmond;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.Input {
+    margin: 10px;
+}
+
+.Contacts {
+    color: blanchedalmond;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.filterTitle {
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
 }

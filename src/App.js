@@ -7,14 +7,24 @@ import shortid from 'shortid';
 
 class App extends Component {
   state = {
-    contacts: [
-      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-    ],
+    contacts: [],
     filter: '',
   };
+
+  componentDidMount() {
+    const localContacts = localStorage.getItem('contacts')
+    const parsedContacts = JSON.parse(localContacts)
+
+    if (parsedContacts) {
+      this.setState({ contacts: parsedContacts })
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.contacts !== prevState.contacts) {
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts))
+    }
+  }
 
   addContact = (name, number) => {
     const todo = {
@@ -24,13 +34,20 @@ class App extends Component {
     };
     const { contacts } = this.state;
     const alreadyInContacts = contacts.find(
-      contact => contact.name === todo.name,
+      contact => contact.name === todo.name && contact.number === todo.number,
     );
     if (alreadyInContacts) {
       alert(`${alreadyInContacts.name} is already in contacts.`);
       return;
     }
-
+    if (todo.name === '') {
+      alert('Please enter data');
+      return
+    }
+    if (todo.number === '') {
+      alert('Please enter the number')
+      return
+    }
     this.setState(prevState => ({
       contacts: [todo, ...prevState.contacts],
     }));
